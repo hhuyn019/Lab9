@@ -39,7 +39,7 @@ void PWM_off() {
 	TCCR3B = 0x00;
 }
 
-enum States {BEGIN, INIT, ON, OFF) State;
+enum States {BEGIN, INIT, ON, OFF} State;
 
 void Tick() {
 	switch(State) {
@@ -100,7 +100,7 @@ void Tick() {
 int main(void) {
     /* Insert DDR and PORT initializations */
 	DDRA = 0x00; PORTA = 0xFF;
-	DDRC = 0xFF; PORTC = 0x00;
+	DDRB = 0xFF; PORTB = 0x00;
 	State = BEGIN;
 	PWM_on();
     /* Insert your solution below */
