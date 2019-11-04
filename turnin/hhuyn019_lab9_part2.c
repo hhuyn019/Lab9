@@ -39,7 +39,7 @@ void PWM_off() {
 	TCCR3B = 0x00;
 }
 
-enum States {BEGIN, INIT, UP, DOWN, WAIT, TOGGLE) State;
+enum States {BEGIN, INIT, UP, DOWN, WAIT, TOGGLE} State;
 double Notes[9] = {261.63, 293.66, 329.63, 349.23, 392.00, 440.00, 493.88, 523.25, 0};
 double temp = 0.00;
 //unsigned char top = 0x07;
@@ -136,7 +136,7 @@ void Tick() {
 int main(void) {
     /* Insert DDR and PORT initializations */
 	DDRA = 0x00; PORTA = 0xFF;
-	DDRC = 0xFF; PORTC = 0x00;
+	DDRB = 0xFF; PORTB = 0x00;
 	State = BEGIN;
 	PWM_on();
 	clicker = 1;
